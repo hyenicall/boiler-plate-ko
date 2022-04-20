@@ -54,7 +54,7 @@ userSchema.pre('save', function (next) {
 userSchema.methods.comparePassword = function (plainPassword, cb) {
   // 암호화 되어있는 비밀번호랑 비교
   bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
-    if (err) return cb(err)
+    if (err) return cd(err)
     cb(null, isMatch)
   })
 }
@@ -66,7 +66,7 @@ userSchema.methods.generateToken = function (cd) {
   user.token = token
   user.save(function (err, user) {
     if (err) return cd(err)
-    cb(null, user)
+    cd(null, user)
   })
 }
 const User = mongoose.model('User', userSchema)
