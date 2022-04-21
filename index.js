@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // application/json
 app.use(bodyParser.json())
+app.use(cookieParser())
 
 const mongoose = require('mongoose')
 mongoose
